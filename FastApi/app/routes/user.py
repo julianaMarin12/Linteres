@@ -37,7 +37,6 @@ def create_users(user: User = Body(...)):
     Returns:
         None
     """
-    # UserModel.create(username=user.username, password=user.password, email=user.email)
     print(user)
     return {"message": "User created successfully"}
 
@@ -45,13 +44,13 @@ def create_users(user: User = Body(...)):
 @user_route.get("/users")
 def get_users():
     """
-    Retrieve a list of users from the database.
+    Retrieves a list of users from the database.
 
-    This function queries the UserModel to select all users with an ID greater than 0,
-    converts the result to a dictionary format, and returns it as a list.
+    This function queries the UserModel to fetch all users with an ID greater than 0,
+    converts each result into a dictionary, and returns them as a list.
 
     Returns:
-        list: A list of dictionaries, each representing a user.
+        list: A list of dictionaries, where each dictionary represents a user.
     """
     return {"message": "Get all users"}
 
@@ -59,7 +58,7 @@ def get_users():
 @user_route.get("/users/{user_id}")
 def get_user(user_id: int):
     """
-    Retrieve a user by their ID.
+    Retrieves a user by their ID.
 
     Args:
         user_id (int): The ID of the user to retrieve.
