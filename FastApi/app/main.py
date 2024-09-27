@@ -53,5 +53,4 @@ async def root():
     return RedirectResponse(url="/docs")
 
 
-# -------- Usuario --------
 app.include_router(user_route, prefix="/api/users", tags=["Users"])
